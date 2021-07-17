@@ -20,9 +20,7 @@ public class LambdaStepTest {
             open("https://github.com");
         });
         step("Ищем репозиторий " + REPOSITORY, ()->{
-            $(".header-search-input").click();
-            $(".header-search-input").sendKeys(REPOSITORY);
-            $(".header-search-input").submit();
+            $(".header-search-input").setValue(REPOSITORY).submit();
         });
         step("Переходим в репозиторий", ()->
             $(linkText("Antonina19/qa_guru_home_6")).click());

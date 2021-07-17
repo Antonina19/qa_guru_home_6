@@ -12,13 +12,10 @@ public class SelenideTest {
     @Test
     public void testRepositoryIssue(){
         open("https://github.com");
-        $(".header-search-input").click();
-        $(".header-search-input").sendKeys("Antonina19/qa_guru_home_6");
-        $(".header-search-input").submit();
+        $(".header-search-input").setValue("Antonina19/qa_guru_home_6").submit();
 
         $(linkText("Antonina19/qa_guru_home_6")).click();
         $$(".js-repo-nav li").findBy(text("Issues")).click();
         $(byText("Issues")).should(Condition.exist);
-
     }
 }
